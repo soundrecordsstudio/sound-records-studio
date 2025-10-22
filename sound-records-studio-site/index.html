@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sound Records Studio – Beats à l'écoute & achat</title>
+  <meta name="description" content="Des instrumentales originales – Trap, Drill, Afro & Lo‑Fi. Écoute et achète directement." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0b0f;
+      --panel: #0e1016;
+      --text: #e6e8f0;
+      --muted: #9aa3b2;
+      --accent: #7c5cff; /* néon violet */
+      --accent-2: #24e1ff; /* néon cyan */
+      --card: #121522;
+      --border: rgba(255,255,255,0.08);
+      --success: #19d27c;
+    }
+    * { box-sizing: border-box; }
+    html,body { margin:0; padding:0; background: var(--bg); color: var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+    a { color: var(--accent-2); text-decoration: none; }
+    img { max-width: 100%; display:block; }
+
+    .container { width: min(1120px, 92vw); margin: 0 auto; }
+
+    /* Header */
+    header { position: sticky; top:0; z-index: 50; backdrop-filter: saturate(180%) blur(8px); background: linear-gradient(180deg, rgba(10,11,15,0.85), rgba(10,11,15,0.55)); border-bottom: 1px solid var(--border); }
+    .nav { display:flex; align-items:center; justify-content:space-between; padding: 14px 0; }
+    .brand { display:flex; align-items:center; gap:12px; }
+    .brand img { width:40px; height:40px; border-radius: 12px; box-shadow: 0 0 20px rgba(124,92,255,0.35); }
+    .brand h1 { font-size: 16px; margin:0; font-weight: 800; letter-spacing: .5px; }
+    .nav a.btn { padding:10px 14px; border: 1px solid var(--border); border-radius: 12px; transition: all .2s; }
+    .nav a.btn:hover { border-color: rgba(124,92,255,0.6); box-shadow: 0 0 24px rgba(124,92,255,0.25); }
+
+    /* Hero */
+    .hero { padding: 72px 0 36px; display:grid; gap:24px; }
+    .hero .headline { font-size: clamp(28px, 5vw, 44px); line-height: 1.05; font-weight: 800; letter-spacing: -.5px; }
+    .hero .sub { color: var(--muted); font-size: clamp(14px, 2.2vw, 18px); }
+    .hero .cta { display:flex; gap:12px; flex-wrap: wrap; margin-top:12px; }
+    .btn-primary { background: linear-gradient(90deg, var(--accent), var(--accent-2)); color:#000; font-weight:700; border: none; padding: 14px 18px; border-radius: 14px; box-shadow: 0 0 34px rgba(36,225,255,0.22), inset 0 0 0 1px rgba(0,0,0,0.2); }
+    .btn-ghost { padding: 12px 16px; border-radius: 12px; border:1px solid var(--border); color: var(--text); }
+
+    /* Section */
+    section { padding: 40px 0; }
+    .section-title { font-size: 22px; margin-bottom: 16px; font-weight: 800; }
+    .card { background: linear-gradient(180deg, var(--card), #0f1220); border: 1px solid var(--border); border-radius: 16px; padding: 18px; box-shadow: 0 0 0 1px rgba(255,255,255,0.03) inset, 0 12px 40px rgba(0,0,0,0.45); }
+
+    /* Tracks grid */
+    .tracks { display:grid; grid-template-columns: repeat(12, 1fr); gap:16px; }
+    .track { grid-column: span 12; display:grid; grid-template-columns: 80px 1fr; gap:16px; align-items:center; }
+    .cover { width:80px; height:80px; border-radius: 12px; background: radial-gradient(120px 80px at 30% 30%, rgba(124,92,255,0.35), transparent), radial-gradient(160px 80px at 70% 70%, rgba(36,225,255,0.35), transparent), #0d0f1a; border: 1px solid var(--border); box-shadow: 0 0 28px rgba(124,92,255,0.2) inset; display:flex; align-items:center; justify-content:center; font-weight:800; letter-spacing:.5px; color:#cfd5ff; }
+    .t-meta { display:flex; gap:10px; align-items:center; color: var(--muted); font-size: 13px; flex-wrap: wrap; }
+    .t-title { font-weight: 700; font-size: 16px; margin: 0 0 6px; }
+    .actions { display:flex; gap:8px; flex-wrap: wrap; }
+    .btn { font: inherit; cursor: pointer; border-radius: 12px; padding: 10px 12px; border:1px solid var(--border); color: var(--text); background: #0e111d; }
+    .btn:hover { border-color: rgba(36,225,255,0.5); box-shadow: 0 0 20px rgba(36,225,255,0.2); }
+    .btn.buy { border: none; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #0a0b0f; font-weight: 800; }
+    audio { width: 100%; height: 36px; }
+
+    @media (min-width: 820px) {
+      .track { grid-template-columns: 80px 1.2fr .9fr; }
+      .player { padding-left: 8px; }
+      .actions { justify-content: flex-end; }
+    }
+
+    /* Pricing */
+    .pricing { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:16px; }
+    .price-card { padding: 18px; border-radius: 16px; border: 1px solid var(--border); background: linear-gradient(160deg, #0f1220, #0b0d16); }
+    .price-card h4 { margin: 0 0 6px; font-size: 16px; }
+    .price { font-size: 28px; font-weight: 800; margin: 4px 0 10px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .price-card ul { margin:0; padding-left: 18px; color: var(--muted); font-size: 14px; }
+
+    /* Contact */
+    .contact { display:flex; gap: 12px; flex-wrap: wrap; }
+    .chip { padding: 10px 12px; border-radius: 999px; background: #0f1324; border: 1px solid var(--border); }
+
+    footer { padding: 40px 0; color: var(--muted); text-align:center; border-top: 1px solid var(--border); }
+
+    .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 22px 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <img src="logo.png" alt="Sound Records Studio Logo" />
+        <h1>Sound Records Studio</h1>
+      </div>
+      <nav style="display:flex; gap:8px; align-items:center;">
+        <a href="#beats" class="btn">Écouter</a>
+        <a href="#pricing" class="btn">Licences</a>
+        <a href="#contact" class="btn">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="sub">Trap · Drill · Afro · Lo‑Fi</p>
+      <h2 class="headline">Des instrumentales originales pour artistes indépendants.</h2>
+      <div class="cta">
+        <a href="#beats" class="btn-primary">Écouter les beats</a>
+        <a href="#pricing" class="btn-ghost">Voir les licences</a>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="beats">
+      <h3 class="section-title">Écouter & acheter</h3>
+      <div class="card">
+        <div class="tracks">
+
+          <div class="track">
+            <div class="cover">SR</div>
+            <div>
+              <p class="t-title">Road Skyline – Amaj – 96 BPM</p>
+              <div class="t-meta">
+                <span>Genre: Lo‑Fi / Trap</span>
+                <span>Key: Amaj</span>
+                <span>BPM: 96</span>
+              </div>
+              <div class="player">
+                <audio controls preload="none" src="">
+                  Votre navigateur ne supporte pas l'élément audio.
+                </audio>
+              </div>
+            </div>
+            <div class="actions">
+              <a class="btn" href="#" target="_blank" rel="noopener">Écouter complet</a>
+              <a class="btn buy" href="#" target="_blank" rel="noopener">Acheter</a>
+            </div>
+          </div>
+
+          <div class="track">
+            <div class="cover">SR</div>
+            <div>
+              <p class="t-title">Sunset Strip – C#min – 120 BPM</p>
+              <div class="t-meta">
+                <span>Genre: Trap</span>
+                <span>Key: C#min</span>
+                <span>BPM: 120</span>
+              </div>
+              <div class="player">
+                <audio controls preload="none" src="">
+                  Votre navigateur ne supporte pas l'élément audio.
+                </audio>
+              </div>
+            </div>
+            <div class="actions">
+              <a class="btn" href="#" target="_blank" rel="noopener">Écouter complet</a>
+              <a class="btn buy" href="#" target="_blank" rel="noopener">Acheter</a>
+            </div>
+          </div>
+
+          <div class="track">
+            <div class="cover">SR</div>
+            <div>
+              <p class="t-title">Money – Cmin – 73 BPM (Ninho Type Beat / Drill)</p>
+              <div class="t-meta">
+                <span>Genre: Drill</span>
+                <span>Key: Cmin</span>
+                <span>BPM: 73</span>
+              </div>
+              <div class="player">
+                <audio controls preload="none" src="">
+                  Votre navigateur ne supporte pas l'élément audio.
+                </audio>
+              </div>
+            </div>
+            <div class="actions">
+              <a class="btn" href="#" target="_blank" rel="noopener">Écouter complet</a>
+              <a class="btn buy" href="#" target="_blank" rel="noopener">Acheter</a>
+            </div>
+          </div>
+
+          <div class="track">
+            <div class="cover">SR</div>
+            <div>
+              <p class="t-title">To Be Sad – Fmin – 136 BPM</p>
+              <div class="t-meta">
+                <span>Genre: Trap / Emo</span>
+                <span>Key: Fmin</span>
+                <span>BPM: 136</span>
+              </div>
+              <div class="player">
+                <audio controls preload="none" src="">
+                  Votre navigateur ne supporte pas l'élément audio.
+                </audio>
+              </div>
+            </div>
+            <div class="actions">
+              <a class="btn" href="#" target="_blank" rel="noopener">Écouter complet</a>
+              <a class="btn buy" href="#" target="_blank" rel="noopener">Acheter</a>
+            </div>
+          </div>
+
+          <div class="track">
+            <div class="cover">SR</div>
+            <div>
+              <p class="t-title">Red Zone – C#min – 144 BPM</p>
+              <div class="t-meta">
+                <span>Genre: Drill</span>
+                <span>Key: C#min</span>
+                <span>BPM: 144</span>
+              </div>
+              <div class="player">
+                <audio controls preload="none" src="">
+                  Votre navigateur ne supporte pas l'élément audio.
+                </audio>
+              </div>
+            </div>
+            <div class="actions">
+              <a class="btn" href="#" target="_blank" rel="noopener">Écouter complet</a>
+              <a class="btn buy" href="#" target="_blank" rel="noopener">Acheter</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="pricing">
+      <h3 class="section-title">Licences & tarifs</h3>
+      <div class="pricing">
+        <div class="price-card">
+          <h4>MP3 Lease</h4>
+          <div class="price">20 €</div>
+          <ul>
+            <li>Fichier MP3</li>
+            <li>Streaming + clips</li>
+          </ul>
+          <div style="margin-top:12px;">
+            <a class="btn buy" href="#" target="_blank" rel="noopener">Acheter MP3</a>
+          </div>
+        </div>
+        <div class="price-card">
+          <h4>WAV Lease</h4>
+          <div class="price">40 €</div>
+          <ul>
+            <li>WAV + MP3</li>
+            <li>Streaming + clips + concerts</li>
+          </ul>
+          <div style="margin-top:12px;">
+            <a class="btn buy" href="#" target="_blank" rel="noopener">Acheter WAV</a>
+          </div>
+        </div>
+        <div class="price-card">
+          <h4>Exclusive</h4>
+          <div class="price">150 €</div>
+          <ul>
+            <li>WAV + Stems (trackouts)</li>
+            <li>Droits étendus (usage complet)</li>
+          </ul>
+          <div style="margin-top:12px;">
+            <a class="btn buy" href="#" target="_blank" rel="noopener">Acheter Exclusive</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="contact">
+      <h3 class="section-title">Contact & réseaux</h3>
+      <div class="card">
+        <div class="contact">
+          <span class="chip">Email: <a href="mailto:swr.studio.prod@gmail.com">swr.studio.prod@gmail.com</a></span>
+          <span class="chip">Instagram: <a href="https://www.instagram.com/sound.records.studio/" target="_blank" rel="noopener">@sound.records.studio</a></span>
+          <span class="chip">TikTok: <a href="#" target="_blank" rel="noopener">(ajoute ton lien)</a></span>
+        </div>
+        <p style="color:var(--muted); margin-top:12px;">Besoin d’une instru sur mesure ? Écris‑moi et décris ton univers (tempo, ambiance, références).</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2025 — Sound Records Studio · Tous droits réservés
+    </div>
+  </footer>
+
+  <script>
+    // Scroll doux sur ancres
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href');
+        if (id.length > 1) {
+          e.preventDefault();
+          document.querySelector(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
