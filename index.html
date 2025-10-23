@@ -9,130 +9,129 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
 		<style>
-			    /* === BASE === */
-			:root {
-			  --bg: #0a0b0f;
-			  --panel: #161820;
-			  --text: #e6e8f0;
-			  --muted: #9aa3b2;
-			  --accent: #7c5cff;
-			  --accent-2: #24e1ff;
-			}
+						    /* === BASE === */
+						:root {
+						  --bg: #0a0b0f;
+						  --panel: #161820;
+						  --text: #e6e8f0;
+						  --muted: #9aa3b2;
+						  --accent: #7c5cff;
+						  --accent-2: #24e1ff;
+						}
 
-			body {
-			  background-color: var(--bg);
-			  color: var(--text);
-			  font-family: 'Inter', sans-serif;
-			  margin: 0;
-			  line-height: 1.6;
-			}
+						body {
+						  background-color: var(--bg);
+						  color: var(--text);
+						  font-family: 'Inter', sans-serif;
+						  margin: 0;
+						  line-height: 1.6;
+						}
 
-			/* === HEADER === */
-			header {
-			  background: linear-gradient(90deg, rgba(12,14,20,0.95), rgba(20,22,28,0.95));
-			  padding: 2.5rem 1rem;
-			  text-align: center;
-			  box-shadow: 0 0 40px rgba(124,92,255,0.15);
-			}
+						/* === HEADER === */
+						header {
+						  background: linear-gradient(90deg, rgba(12,14,20,0.95), rgba(20,22,28,0.95));
+						  padding: 2.5rem 1rem;
+						  text-align: center;
+						  box-shadow: 0 0 40px rgba(124,92,255,0.15);
+						}
 
-			header h1 {
-			  font-weight: 800;
-			  letter-spacing: 1px;
-			  color: var(--accent);
-			}
+						header h1 {
+						  font-weight: 800;
+						  letter-spacing: 1px;
+						  color: var(--accent);
+						}
 
-			header p {
-			  color: var(--muted);
-			}
+						header p {
+						  color: var(--muted);
+						}
 
-			/* === SECTIONS === */
-			section {
-			  max-width: 800px;
-			  margin: 3rem auto;
-			  padding: 0 1.5rem;
-			}
+						/* === SECTIONS === */
+						section {
+						  max-width: 800px;
+						  margin: 3rem auto;
+						  padding: 0 1.5rem;
+						}
 
-			h2 {
-			  color: var(--accent-2);
-			  border-left: 3px solid var(--accent);
-			  padding-left: 0.8rem;
-			  font-weight: 600;
-			  margin-bottom: 1.5rem;
-			}
+						h2 {
+						  color: var(--accent-2);
+						  border-left: 3px solid var(--accent);
+						  padding-left: 0.8rem;
+						  font-weight: 600;
+						  margin-bottom: 1.5rem;
+						}
 
-			/* === BEAT CARDS === */
-			.beat {
-			  background: var(--panel);
-			  border-radius: 16px;
-			  padding: 1.5rem;
-			  margin-bottom: 1.5rem;
-			  transition: transform 0.3s ease, box-shadow 0.3s ease;
-			}
+						/* === BEAT CARDS === */
+						.beat {
+						  background: var(--panel);
+						  border-radius: 16px;
+						  padding: 1.5rem;
+						  margin-bottom: 1.5rem;
+						  transition: transform 0.3s ease, box-shadow 0.3s ease;
+						}
 
-			.beat:hover {
-			  transform: translateY(-6px);
-			  box-shadow: 0 0 25px rgba(124,92,255,0.15);
-			}
+						.beat:hover {
+						  transform: translateY(-6px);
+						  box-shadow: 0 0 25px rgba(124,92,255,0.15);
+						}
 
-			.beat h3 {
-			  margin-top: 0;
-			  color: var(--accent);
-			}
+						.beat h3 {
+						  margin-top: 0;
+						  color: var(--accent);
+						}
 
-			.beat p {
-			  color: var(--muted);
-			  font-size: 0.95rem;
-			}
+						.beat p {
+						  color: var(--muted);
+						  font-size: 0.95rem;
+						}
 
-			/* === BUTTONS === */
-			button, .btn {
-			  background-color: var(--accent);
-			  color: white;
-			  border: none;
-			  border-radius: 10px;
-			  padding: 0.8rem 1.5rem;
-			  cursor: pointer;
-			  font-weight: 600;
-			  transition: all 0.3s ease;
-			}
+						/* === BUTTONS === */
+						button, .btn {
+						  background-color: var(--accent);
+						  color: white;
+						  border: none;
+						  border-radius: 10px;
+						  padding: 0.8rem 1.5rem;
+						  cursor: pointer;
+						  font-weight: 600;
+						  transition: all 0.3s ease;
+						}
 
-			button:hover, .btn:hover {
-			  background-color: var(--accent-2);
-			  box-shadow: 0 0 15px var(--accent-2);
-			}
+						button:hover, .btn:hover {
+						  background-color: var(--accent-2);
+						  box-shadow: 0 0 15px var(--accent-2);
+						}
 
-			/* === FOOTER === */
-			footer {
-			  background: #0d0e13;
-			  text-align: center;
-			  padding: 2rem 1rem;
-			  color: var(--muted);
-			  border-top: 1px solid rgba(255,255,255,0.05);
-			}
+						/* === FOOTER === */
+						footer {
+						  background: #0d0e13;
+						  text-align: center;
+						  padding: 2rem 1rem;
+						  color: var(--muted);
+						  border-top: 1px solid rgba(255,255,255,0.05);
+						}
 
-			footer a {
-			  color: var(--accent-2);
-			  text-decoration: none;
-			}
+						footer a {
+						  color: var(--accent-2);
+						  text-decoration: none;
+						}
 
-			footer a:hover {
-			  color: white;
-			}
+						footer a:hover {
+						  color: white;
+						}
 
-			/* === ANIMATIONS === */
-			@keyframes glowPulse {
-			  0% { text-shadow: 0 0 5px var(--accent); }
-			  50% { text-shadow: 0 0 15px var(--accent-2); }
-			  100% { text-shadow: 0 0 5px var(--accent); }
-			}
+						/* === ANIMATIONS === */
+						@keyframes glowPulse {
+						  0% { text-shadow: 0 0 5px var(--accent); }
+						  50% { text-shadow: 0 0 15px var(--accent-2); }
+						  100% { text-shadow: 0 0 5px var(--accent); }
+						}
 
-			h1, h2 {
-			  animation: glowPulse 5s infinite alternate;
-			}
+						h1, h2 {
+						  animation: glowPulse 5s infinite alternate;
+						}
 
-			body::before { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url('chemin/vers/ton-logo.png') no-repeat center top; background-size: 200px; /* ajuste selon la taille voulue */ opacity: 0.05; /* 0.03 à
-0.1 selon l’effet souhaité */ pointer-events: none; /* pour ne pas bloquer les clics */ z-index: 0; }
-
+						body::before { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url('chemin/vers/ton-logo.png') no-repeat center top; background-size: 200px; /* ajuste selon la taille voulue */ opacity: 0.05; /* 0.03 à
+			0.1 selon l’effet souhaité */ pointer-events: none; /* pour ne pas bloquer les clics */ z-index: 0; }
 		</style>
 	</head>
 	<body>
@@ -182,7 +181,8 @@
 										scrolling="no"
 										frameborder="no"
 										allow="autoplay"
-										src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/southwest-records-studio/road-skyline-amaj-96bpm&color=%237c5cff&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false">
+										src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/southwest-records-studio/road-skyline-amaj-96bpm&color=%237c5cff&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"
+									>
 									</iframe>
 								</div>
 							</div>
@@ -208,7 +208,8 @@
 										scrolling="no"
 										frameborder="no"
 										allow="autoplay"
-										src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/southwest-records-studio/sunset-strip-cmin-bpm-120&color=%237c5cff&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false">
+										src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/southwest-records-studio/sunset-strip-cmin-bpm-120&color=%237c5cff&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"
+									>
 									</iframe>
 								</div>
 							</div>
@@ -234,7 +235,8 @@
 										scrolling="no"
 										frameborder="no"
 										allow="autoplay"
-										src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/southwest-records-studio/money-cmin-73-bpm-ninho-type-beat-drill&color=%237c5cff&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false">
+										src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/southwest-records-studio/money-cmin-73-bpm-ninho-type-beat-drill&color=%237c5cff&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"
+									>
 									</iframe>
 								</div>
 							</div>
@@ -260,7 +262,8 @@
 										scrolling="no"
 										frameborder="no"
 										allow="autoplay"
-										src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/southwest-records-studio/to-be-sad-fmin-bpm-136&color=%237c5cff&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false">
+										src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/southwest-records-studio/to-be-sad-fmin-bpm-136&color=%237c5cff&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"
+									>
 									</iframe>
 								</div>
 							</div>
@@ -286,7 +289,8 @@
 										scrolling="no"
 										frameborder="no"
 										allow="autoplay"
-										src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/southwest-records-studio/red-zone-cmin-144bpm&color=%237c5cff&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false">
+										src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/southwest-records-studio/red-zone-cmin-144bpm&color=%237c5cff&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"
+									>
 									</iframe>
 								</div>
 							</div>
