@@ -1,332 +1,85 @@
-<!DOCTYPE html>
-<html lang="fr">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Sound Records Studio – Beats à l'écoute & achat</title>
-		<meta name="description" content="Des instrumentales originales – Trap, Drill, Afro & Lo‑Fi. Écoute et achète directement." />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
-		<style>
-						    /* === BASE === */
-						:root {
-						  --bg: #0a0b0f;
-						  --panel: #161820;
-						  --text: #e6e8f0;
-						  --muted: #9aa3b2;
-						  --accent: #7c5cff;
-						  --accent-2: #24e1ff;
-						}
-
-						body {
-						  background-color: var(--bg);
-						  color: var(--text);
-						  font-family: 'Inter', sans-serif;
-						  margin: 0;
-						  line-height: 1.6;
-						}
-
-						/* === HEADER === */
-						header {
-						  background: linear-gradient(90deg, rgba(12,14,20,0.95), rgba(20,22,28,0.95));
-						  padding: 2.5rem 1rem;
-						  text-align: center;
-						  box-shadow: 0 0 40px rgba(124,92,255,0.15);
-						}
-
-						header h1 {
-						  font-weight: 800;
-						  letter-spacing: 1px;
-						  color: var(--accent);
-						}
-
-						header p {
-						  color: var(--muted);
-						}
-
-						/* === SECTIONS === */
-						section {
-						  max-width: 800px;
-						  margin: 3rem auto;
-						  padding: 0 1.5rem;
-						}
-
-						h2 {
-						  color: var(--accent-2);
-						  border-left: 3px solid var(--accent);
-						  padding-left: 0.8rem;
-						  font-weight: 600;
-						  margin-bottom: 1.5rem;
-						}
-
-						/* === BEAT CARDS === */
-						.beat {
-						  background: var(--panel);
-						  border-radius: 16px;
-						  padding: 1.5rem;
-						  margin-bottom: 1.5rem;
-						  transition: transform 0.3s ease, box-shadow 0.3s ease;
-						}
-
-						.beat:hover {
-						  transform: translateY(-6px);
-						  box-shadow: 0 0 25px rgba(124,92,255,0.15);
-						}
-
-						.beat h3 {
-						  margin-top: 0;
-						  color: var(--accent);
-						}
-
-						.beat p {
-						  color: var(--muted);
-						  font-size: 0.95rem;
-						}
-
-						/* === BUTTONS === */
-						button, .btn {
-						  background-color: var(--accent);
-						  color: white;
-						  border: none;
-						  border-radius: 10px;
-						  padding: 0.8rem 1.5rem;
-						  cursor: pointer;
-						  font-weight: 600;
-						  transition: all 0.3s ease;
-						}
-
-						button:hover, .btn:hover {
-						  background-color: var(--accent-2);
-						  box-shadow: 0 0 15px var(--accent-2);
-						}
-
-						/* === FOOTER === */
-						footer {
-						  background: #0d0e13;
-						  text-align: center;
-						  padding: 2rem 1rem;
-						  color: var(--muted);
-						  border-top: 1px solid rgba(255,255,255,0.05);
-						}
-
-						footer a {
-						  color: var(--accent-2);
-						  text-decoration: none;
-						}
-
-						footer a:hover {
-						  color: white;
-						}
-
-						/* === ANIMATIONS === */
-						@keyframes glowPulse {
-						  0% { text-shadow: 0 0 5px var(--accent); }
-						  50% { text-shadow: 0 0 15px var(--accent-2); }
-						  100% { text-shadow: 0 0 5px var(--accent); }
-						}
-
-						h1, h2 {
-						  animation: glowPulse 5s infinite alternate;
-						}
-
-						body::before { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url('chemin/vers/ton-logo.png') no-repeat center top; background-size: 100px; /* ajuste selon la taille voulue */ opacity: 0.05; /* 0.03 à
-			0.1 selon l’effet souhaité */ pointer-events: none; /* pour ne pas bloquer les clics */ z-index: 0; }
-		</style>
-	</head>
-	<body>
-		<header>
-			<div class="container nav">
-				<div class="brand">
-					<img src="logo.png" alt="Sound Records Studio Logo" />
-					<h1>Sound Records Studio</h1>
-				</div>
-				<nav style="display:flex; gap:5px; align-items:center;">
-					<a href="#beats" class="btn">Écouter</a>
-					<a href="#pricing" class="btn">Licences</a>
-					<a href="#contact" class="btn">Contact</a>
-				</nav>
-			</div>
-		</header>
-
-		<main class="container">
-			<section class="hero">
-				<p class="sub">Trap · Drill · Afro · Lo‑Fi</p>
-				<h2 class="headline">Des instrumentales originales pour artistes indépendants.</h2>
-				<div class="cta">
-					<a href="#beats" class="btn-primary">Écouter les beats</a>
-					<a href="#pricing" class="btn-ghost">Voir les licences</a>
-				</div>
-			</section>
-
-			<div class="divider"></div>
-
-			<section id="beats">
-				<h3 class="section-title">Écouter & acheter</h3>
-				<div class="card">
-					<div class="tracks">
-						<div class="track">
-							<div>
-								
-									</iframe>
-								</div>
-							</div>
-							<div class="actions">
-								<a class="btn" href="https://soundcloud.com/southwest-records-studio/red-zone-cmin-144bpm" target="_blank" rel="noopener">Écouter complet</a>
-								<a class="btn buy" href="https://gumroad.com/l/red-zone" target="_blank" rel="noopener">Acheter</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<div class="divider"></div>
-			<section id="packs" style="background:#0a0b0f; color:#fff; padding:60px 0; font-family:'Inter', sans-serif;">
-  <div style="max-width:1200px; margin:auto; text-align:center;">
-    <h2 style="font-size:2rem; margin-bottom:40px; color:#7c5cff;">🎧 Packs de Prods – Nyx-EQ</h2>
-    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:40px;">
-
-      <!-- PACK 1 -->
-	  <div style="background:#11131a; border-radius:20px; overflow:hidden; box-shadow:0 0 15px rgba(124,92,255,0.3);">
-	    <img src="Images/pack1.png" alt="Pack 1" style="width:100%; display:block;">
-	    <div style="padding:20px;">
-		  <h3 style="margin:0 0 15px;">Pack Prod – Rap Fr – Afro/Trap/Drill #1</h3>
-
-    	  <p style="font-size:0.9rem; color:#aaa;">🎵 Fade In Blue</p>
-    	  <audio controls preload="metadata" style="width:100%; margin-bottom:10px;">
-      		<source src="FadeInBlue-Fmin-95Bpm(Nyx-EQ).mp3" type="audio/mpeg">
-    	  </audio>
-
-    	  <p style="font-size:0.9rem; color:#aaa;">🔥 Red Zone</p>
-    	  <audio controls preload="metadata" style="width:100%; margin-bottom:10px;">
-      		<source src="RedZoneC#min-144Bpm (Nyx-EQ).mp3" type="audio/mpeg">
-    	  </audio>
-
-    	  <p style="font-size:0.9rem; color:#aaa;">💥 Ready Or Not</p>
-    	  <audio controls preload="metadata" style="width:100%;">
-      		<source src="Ready or not-Fmin-117Bpm(Nyx-EQ).mp3" type="audio/mpeg">
-		  </audio>
-	  </div>
+<!doctype html><html lang="fr">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nyx-EQ — Sound Records Studio</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <meta name="description" content="Beats Afro / Trap / Drill — Nyx-EQ. Studio, mix/master, packs de prods.">
+  <meta property="og:image" content="images/pack1.png">
+</head>
+<body>
+  <nav>
+    <div class="navbar container">
+      <div class="logo">NYX-EQ</div>
+      <div class="menu">
+        <a href="index.html" class="active">Accueil</a>
+        <a href="beats.html">Beats</a>
+        <a href="studio.html">Studio</a>
+        <a href="gallery.html">Galerie</a>
+        <a href="about.html">À propos</a>
+        <a href="contact.html">Contact</a>
+      </div>
     </div>
+  </nav>
 
-      <!-- PACK 2 -->
-      <div style="background:#11131a; border-radius:20px; overflow:hidden; box-shadow:0 0 15px rgba(186,104,255,0.3);">
-        <img src="Images/pack2.png" alt="Pack 2" style="width:100%; display:block;">
-        <div style="padding:20px;">
-          <h3 style="margin:0 0 10px;">Pack Prod – Rap Fr – Afro/Trap/Drill #2</h3>
-          <audio controls style="width:100%;">
-            <source src="audio/pack2.mp3" type="audio/mpeg">
-          </audio>
-        </div>
-      </div>
-
-      <!-- PACK 3 -->
-      <div style="background:#11131a; border-radius:20px; overflow:hidden; box-shadow:0 0 15px rgba(255,193,7,0.3);">
-        <img src="Images/pack3.png" alt="Pack 3" style="width:100%; display:block;">
-        <div style="padding:20px;">
-          <h3 style="margin:0 0 10px;">Pack Prod – Rap Fr – Afro/Trap/Drill #3</h3>
-          <audio controls style="width:100%;">
-            <source src="audio/pack3.mp3" type="audio/mpeg">
-          </audio>
-        </div>
-      </div>
-
-      <!-- PACK 4 -->
-      <div style="background:#11131a; border-radius:20px; overflow:hidden; box-shadow:0 0 15px rgba(255,50,50,0.3);">
-        <img src="Images/pack4.png" alt="Pack 4" style="width:100%; display:block;">
-        <div style="padding:20px;">
-          <h3 style="margin:0 0 10px;">Pack Prod – Rap Fr – Afro/Trap/Drill #4</h3>
-          <audio controls style="width:100%;">
-            <source src="audio/pack4.mp3" type="audio/mpeg">
-          </audio>
-        </div>
-      </div>
-
-      <!-- PACK 5 -->
-      <div style="background:#11131a; border-radius:20px; overflow:hidden; box-shadow:0 0 15px rgba(24,255,230,0.3);">
-        <img src="Images/pack5.png" alt="Pack 5" style="width:100%; display:block;">
-        <div style="padding:20px;">
-          <h3 style="margin:0 0 10px;">Pack Prod – Rap Fr – Afro/Trap/Drill #5</h3>
-          <audio controls style="width:100%;">
-            <source src="audio/pack5.mp3" type="audio/mpeg">
-          </audio>
-        </div>
-      </div>
-
+  <header class="hero">
+    <div class="container">
+      <span class="badge">Afro · Trap · Drill · RnB</span>
+      <h1>Beats cinématiques & modernes — par Nyx-EQ</h1>
+      <p class="lead muted">Des prods prêtes à placer pour la scène Rap FR & Afro-Fusion. Écoute les packs, réserve une session au studio, collabore.</p>
+      <p>
+        <a href="beats.html" class="btn">🎧 Écouter les packs</a>
+        <a href="studio.html" class="btn-outline" style="margin-left:10px">🎚️ Réserver le studio</a>
+      </p>
     </div>
-  </div>
-</section>
+  </header>
 
-			<section id="pricing">
-				<h3 class="section-title">Licences & tarifs</h3>
-				<div class="pricing">
-					<div class="price-card">
-						<h4>MP3 Lease</h4>
-						<div class="price">20 €</div>
-						<ul>
-							<li>Fichier MP3</li>
-							<li>Streaming + clips</li>
-						</ul>
-						<div style="margin-top:12px;">
-							<a class="btn buy" href="#" target="_blank" rel="noopener">Acheter MP3</a>
-						</div>
-					</div>
-					<div class="price-card">
-						<h4>WAV Lease</h4>
-						<div class="price">40 €</div>
-						<ul>
-							<li>WAV + MP3</li>
-							<li>Streaming + clips + concerts</li>
-						</ul>
-						<div style="margin-top:12px;">
-							<a class="btn buy" href="#" target="_blank" rel="noopener">Acheter WAV</a>
-						</div>
-					</div>
-					<div class="price-card">
-						<h4>Exclusive</h4>
-						<div class="price">150 €</div>
-						<ul>
-							<li>WAV + Stems (trackouts)</li>
-							<li>Droits étendus (usage complet)</li>
-						</ul>
-						<div style="margin-top:12px;">
-							<a class="btn buy" href="#" target="_blank" rel="noopener">Acheter Exclusive</a>
-						</div>
-					</div>
-				</div>
-			</section>
+  <section class="container">
+    <h2>Derniers packs</h2>
+    <div class="grid grid-3">
+      <!-- Exemple carte pack 1 -->
+      <article class="card" data-audio-select>
+        <img src="images/pack1.png" alt="Pack 1">
+        <div class="pad">
+          <h3>Pack Prod — Afro/Trap/Drill #1</h3>
+          <select>
+            <option value="audio/pack1_track1.mp3">🎵 Afro Bounce</option>
+            <option value="audio/pack1_track2.mp3">🔥 Trap Energy</option>
+            <option value="audio/pack1_track3.mp3">💥 Drill Zone</option>
+          </select>
+          <audio controls preload="metadata" class="audio">
+            <source src="audio/pack1_track1.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      </article>
 
-			<div class="divider"></div>
+      <article class="card" data-audio-select>
+        <img src="images/pack2.png" alt="Pack 2">
+        <div class="pad">
+          <h3>Pack Prod — Afro/Trap/Drill #2</h3>
+          <select>
+            <option value="audio/pack2_track1.mp3">Violet Mood</option>
+            <option value="audio/pack2_track2.mp3">Night Drive</option>
+            <option value="audio/pack2_track3.mp3">Drill Heat</option>
+          </select>
+          <audio controls preload="metadata" class="audio">
+            <source src="audio/pack2_track1.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      </article>
 
-			<section id="contact">
-				<h3 class="section-title">Contact & réseaux</h3>
-				<div class="card">
-					<div class="contact">
-						<span class="chip">Email: <a href="mailto:swr.studio.prod@gmail.com">swr.studio.prod@gmail.com</a></span>
-						<span class="chip">Instagram: <a href="https://www.instagram.com/sound.records.studio/" target="_blank" rel="noopener">@sound.records.studio</a></span>
-						<span class="chip">TikTok: <a href="#" target="_blank" rel="noopener">(ajoute ton lien)</a></span>
-					</div>
-					<p style="color:var(--muted); margin-top:12px;">Besoin d’une instru sur mesure ? Écris‑moi et décris ton univers (tempo, ambiance, références).</p>
-				</div>
-			</section>
-		</main>
+      <article class="card">
+        <img src="images/pack3.png" alt="Pack 3">
+        <div class="pad">
+          <h3>Pack Prod — Afro/Trap/Drill #3</h3>
+          <p class="muted">Plus de packs & extraits sur la page <a href="beats.html">Beats</a>.</p>
+        </div>
+      </article>
+    </div>
+  </section>
 
-		<footer>
-			<div class="container">
-				© 2025 — Sound Records Studio · Tous droits réservés
-			</div>
-		</footer>
+  <footer class="footer">
+    © Nyx-EQ — Sound Records Studio · <a href="https://instagram.com/" target="_blank">Instagram</a> · <a href="https://beatstars.com/" target="_blank">BeatStars</a>
+  </footer>
 
-		<script>
-			document.querySelectorAll('a[href^="#"]').forEach(a => {
-			  a.addEventListener('click', (e) => {
-			    const id = a.getAttribute('href');
-			    if (id.length > 1) {
-			      e.preventDefault();
-			      document.querySelector(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
-			    }
-			  });
-			});
-		</script>
-	</body>
-</html>
+  <script src="assets/js/app.js"></script>
+</body></html>
