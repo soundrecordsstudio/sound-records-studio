@@ -1,91 +1,140 @@
-<!doctype html><html lang="fr">
+<!doctype html>
+<html lang="fr">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Beats — Nyx-EQ</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beats & Packs — Nyx-EQ</title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .beats-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
+      margin-top:40px;
+    }
+    .beat-card {
+      background:var(--card);
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:0 0 25px rgba(124,92,255,0.25);
+      transition:0.3s;
+    }
+    .beat-card:hover { box-shadow:0 0 40px rgba(24,255,230,0.35); transform:translateY(-4px); }
+    .beat-card img { width:100%; height:180px; object-fit:cover; display:block; }
+    .beat-card .pad { padding:18px; }
+    .beat-card h3 { margin:0 0 8px; }
+    .beat-card audio { width:100%; margin-top:10px; }
+  </style>
 </head>
+
 <body>
-  <nav><div class="navbar container">
-    <div class="logo">NYX-EQ</div>
-    <div class="menu">
-      <a href="index.html">Accueil</a><a class="active" href="beats.html">Beats</a>
-      <a href="studio.html">Studio</a><a href="gallery.html">Galerie</a>
-      <a href="about.html">À propos</a><a href="contact.html">Contact</a>
-    </div></div>
+  <nav>
+    <div class="navbar container">
+      <div class="logo">NYX-EQ</div>
+      <div class="menu">
+        <a href="index.html">Accueil</a>
+        <a class="active" href="beats.html">Beats</a>
+        <a href="studio.html">Studio</a>
+        <a href="gallery.html">Galerie</a>
+        <a href="about.html">À propos</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
   </nav>
 
   <section class="container">
-    <h1>Catalogue — Packs de prods</h1>
-    <p class="muted">Écoute les extraits, puis <a href="contact.html">contacte-moi</a> pour placement/achat. Possible d’intégrer un lecteur BeatStars embedded.</p>
-    <div class="grid grid-3">
+    <h1>🎧 Packs de Prods — Afro / Trap / Drill</h1>
+    <p class="muted">5 collections originales produites par Nyx-EQ · à écouter ou à placer.</p>
 
-      <!-- Répète le motif pour #1 à #5 -->
-      <article class="card" data-audio-select>
+    <div class="beats-grid">
+      <!-- PACK 1 -->
+      <div class="beat-card">
         <img src="images/pack1.png" alt="Pack 1">
         <div class="pad">
-          <h3>Pack #1 — Afro/Trap/Drill</h3>
-          <select>
+          <h3>Pack #1 – Afro / Trap / Drill</h3>
+          <select id="pack1select" style="width:100%;padding:8px;border-radius:10px;background:#0f1117;color:#fff;border:none;">
             <option value="audio/pack1_track1.mp3">Afro Bounce</option>
             <option value="audio/pack1_track2.mp3">Trap Energy</option>
             <option value="audio/pack1_track3.mp3">Drill Zone</option>
           </select>
-          <audio controls preload="metadata" class="audio">
+          <audio id="pack1audio" controls preload="metadata">
             <source src="audio/pack1_track1.mp3" type="audio/mpeg">
           </audio>
-          <p style="margin-top:10px">
-            <a class="btn" href="contact.html">🔗 Proposer un placement</a>
-          </p>
+          <script>
+            const s1=document.getElementById('pack1select'),a1=document.getElementById('pack1audio');
+            s1.addEventListener('change',()=>{a1.src=s1.value;a1.load();a1.play();});
+          </script>
+          <p><a class="btn" href="contact.html">🔗 Proposer un placement</a></p>
         </div>
-      </article>
+      </div>
 
-      <!-- Pack 2 -->
-      <article class="card" data-audio-select>
+      <!-- PACK 2 -->
+      <div class="beat-card">
         <img src="images/pack2.png" alt="Pack 2">
         <div class="pad">
-          <h3>Pack #2 — Afro/Trap/Drill</h3>
-          <select>
+          <h3>Pack #2 – Afro / Trap / Drill</h3>
+          <select id="pack2select">
             <option value="audio/pack2_track1.mp3">Violet Mood</option>
             <option value="audio/pack2_track2.mp3">Night Drive</option>
             <option value="audio/pack2_track3.mp3">Drill Heat</option>
           </select>
-          <audio controls preload="metadata" class="audio">
+          <audio id="pack2audio" controls preload="metadata">
             <source src="audio/pack2_track1.mp3" type="audio/mpeg">
           </audio>
-          <p style="margin-top:10px">
-            <a class="btn" href="contact.html">🔗 Proposer un placement</a>
-          </p>
+          <script>
+            const s2=document.getElementById('pack2select'),a2=document.getElementById('pack2audio');
+            s2.addEventListener('change',()=>{a2.src=s2.value;a2.load();a2.play();});
+          </script>
+          <p><a class="btn" href="contact.html">🔗 Proposer un placement</a></p>
         </div>
-      </article>
+      </div>
 
-      <!-- Pack 3 -->
-      <article class="card" data-audio-select>
-        <img src="images/pack3.png" alt="Pack 3">
-        <div class="pad">
-          <h3>Pack #3 — Afro/Trap/Drill</h3>
-          <select>
-            <option value="audio/pack3_track1.mp3">Golden Hook</option>
-            <option value="audio/pack3_track2.mp3">Club Lift</option>
-            <option value="audio/pack3_track3.mp3">Sharp Drill</option>
-          </select>
-          <audio controls preload="metadata" class="audio">
-            <source src="audio/pack3_track1.mp3" type="audio/mpeg">
-          </audio>
-          <p style="margin-top:10px">
-            <a class="btn" href="contact.html">🔗 Proposer un placement</a>
-          </p>
-        </div>
-      </article>
-
-      <!-- Ajoute les packs 4 et 5 à l’identique -->
-
+      <!-- Ajoute ici les packs 3, 4 et 5 de la même façon -->
     </div>
-
-    <h2 style="margin-top:40px">Intégration BeatStars (optionnel)</h2>
-    <p class="muted">Si tu as un player BeatStars, colle son code embed ici.</p>
-    <!-- Exemple (remplace l'URL par la tienne) -->
-    <!-- <iframe src="https://www.beatstars.com/player/?storeId=TON_ID" width="100%" height="450" frameborder="0"></iframe> -->
   </section>
 
-  <footer class="footer">© Nyx-EQ — Sound Records Studio</footer>
-  <script src="assets/js/app.js"></script>
-</body></html>
+  <section class="container" style="margin-top:70px;">
+    <h1>🎵 Prods individuelles</h1>
+    <p class="muted">Quelques instrumentales sélectionnées (Afro Fusion · Trap US · Drill FR).</p>
+
+    <div class="beats-grid">
+      <div class="beat-card">
+        <img src="images/pack3.png" alt="Red Zone">
+        <div class="pad">
+          <h3>Red Zone (Trap 144 BPM)</h3>
+          <audio controls preload="metadata">
+            <source src="audio/RedZone.mp3" type="audio/mpeg">
+          </audio>
+          <p><a href="contact.html" class="btn">💬 Collaboration</a></p>
+        </div>
+      </div>
+
+      <div class="beat-card">
+        <img src="images/pack4.png" alt="Fade in Blue">
+        <div class="pad">
+          <h3>Fade In Blue (Afro 95 BPM)</h3>
+          <audio controls preload="metadata">
+            <source src="audio/FadeInBlue.mp3" type="audio/mpeg">
+          </audio>
+          <p><a href="contact.html" class="btn">💬 Collaboration</a></p>
+        </div>
+      </div>
+
+      <div class="beat-card">
+        <img src="images/pack5.png" alt="Street Synthwave">
+        <div class="pad">
+          <h3>Street Synthwave (Drill 138 BPM)</h3>
+          <audio controls preload="metadata">
+            <source src="audio/StreetSynthwave.mp3" type="audio/mpeg">
+          </audio>
+          <p><a href="contact.html" class="btn">💬 Collaboration</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    © Nyx-EQ — Sound Records Studio · <a href="https://instagram.com/">Instagram</a> · <a href="https://beatstars.com/">BeatStars</a>
+  </footer>
+</body>
+</html>
