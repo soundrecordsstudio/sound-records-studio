@@ -1,55 +1,100 @@
-<!doctype html><html lang="fr"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Galerie — Nyx-EQ</title><link rel="stylesheet" href="assets/css/style.css"></head>
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galerie — Nyx-EQ</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* --- Galerie Images --- */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 200px; /* hauteur ajustable */
+      object-fit: cover;
+      border-radius: 14px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 15px rgba(124, 92, 255, 0.15);
+    }
+    .gallery img:hover {
+      transform: scale(1.04);
+      box-shadow: 0 0 30px rgba(24, 255, 230, 0.35);
+    }
+
+    /* --- Vidéos YouTube --- */
+    .videos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+    .videos iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border: 0;
+      border-radius: 14px;
+      box-shadow: 0 0 20px rgba(124, 92, 255, 0.25);
+      transition: box-shadow 0.3s ease;
+    }
+    .videos iframe:hover {
+      box-shadow: 0 0 35px rgba(24, 255, 230, 0.35);
+    }
+  </style>
+</head>
 <body>
-<nav><div class="navbar container">
-  <div class="logo">NYX-EQ - Sound Records Studio</div>
-  <div class="menu">
-    <a href="index.html">Accueil</a><a href="beats.html">Beats</a>
-    <a href="studio.html">Studio</a><a class="active" href="gallery.html">Galerie</a>
-    <a href="about.html">À propos</a><a href="contact.html">Contact</a>
-  </div></div>
-</nav>
+  <nav>
+    <div class="navbar container">
+      <div class="logo">NYX-EQ</div>
+      <div class="menu">
+        <a href="index.html">Accueil</a>
+        <a href="beats.html">Beats</a>
+        <a href="studio.html">Studio</a>
+        <a class="active" href="gallery.html">Galerie</a>
+        <a href="about.html">À propos</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
 
-<section class="container">
-  <h1>Galerie / Vidéos</h1>
-  <div class="gallery grid grid-3">
-    <div class="card"><img src="Images/pack1.png" alt=""><div class="pad"><p class="muted">Pack #1</p></div></div>
-    <div class="card"><img src="Images/pack2.png" alt=""><div class="pad"><p class="muted">Pack #2</p></div></div>
-    <div class="card"><img src="Images/pack3.png" alt=""><div class="pad"><p class="muted">Pack #3</p></div></div>
-  </div>
-  <h2>Galerie / Studio<h2>
-  <div classe="gallery grid grid-3">
-    <dis classe="card"><img src="Images/1000029896.jpg" alt=""><div class="pad"><p class="muted">Studio</p></div></div>
-    <dis classe="card"><img src="Images/Design sans titre.jpg" alt=""><div class="pad"><p class="muted">Studio</p></div></div>
-    <dis classe="card"><img src="Images/P1006735.JPG" alt=""><div class="pad"><p class="muted">Studio</p></div></div>
-    <dis classe="card"><img src="Images/PXL_20240523_205503170.MP~2.jpg" alt=""><div class="pad"><p class="muted">Studio</p></div></div>
+  <section class="container">
+    <h1>Galerie visuelle & vidéos</h1>
+    <p class="muted">Explore les visuels et extraits vidéo de l’univers Nyx-EQ — sombre, urbain et cinématique.</p>
 
-  <h3 style="margin-top:36px">Vidéos</h3>
-  <div class="grid grid-3">
-    <!-- Remplace par tes liens YouTube/TikTok -->
-    <div class="card">
-      <div class="pad">
-        <div style="position:relative;padding-top:56.25%">
-          <iframe width="560" height="315"
-            src="https://www.youtube.com/embed/aUnNDPe2of0?si=_FSWJTBqldnOf8BS"
-            title="YouTube video player"
-            style="position:absolute;top:0;left:0;width:100%;height:100%"frameborder="0"
-            allowfullscreen
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </iframe>
-        </div>
-           <div style="position:relative;padding-top:56.25%">
-             <iframe width="560" height="315"
-               src="https://www.youtube.com/embed/7HV7c-xOy6Y?si=eaMBeQoQnUzohfLw"
-               title="YouTube video player"
-               style="position:absolute;top:0;left:0;width:100%;height:100%"frameborder="0" 
-               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
-               allowfullscreen>
-               </iframe></div>
-    </div></div>
-  </div>
-</section>
+    <!-- 🖼️ Images -->
+    <div class="gallery">
+      <img src="images/pack1.png" alt="Pack 1">
+      <img src="images/pack2.png" alt="Pack 2">
+      <img src="images/pack3.png" alt="Pack 3">
+      <img src="images/pack4.png" alt="Pack 4">
+      <img src="images/pack5.png" alt="Pack 5">
+    </div>
 
-<footer class="footer">© Nyx-EQ — Sound Records Studio</footer>
-</body></html>
+    <!-- 🎥 Vidéos YouTube -->
+    <h2 style="margin-top:60px;">Vidéos YouTube</h2>
+    <div class="videos">
+      <!-- Remplace les liens “embed” ci-dessous par les tiens -->
+      <iframe width="560" height="315"
+        src="https://www.youtube.com/embed/7HV7c-xOy6Y?si=ykuJdnov4KqD6mWM" title="YouTube video player" frameborder="0"allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+        </iframe>
+      <iframe width="560" height="315"
+        src="https://www.youtube.com/embed/W5AcYCtNLDY?si=OPKtwKpQzWvM28mW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+        </iframe>
+      <iframe width="560" height="315"
+        src="https://www.youtube.com/embed/I0cdSF8wczE?si=nH4OVUTW48klenTP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <footer class="footer">
+    © Nyx-EQ — Sound Records Studio
+  </footer>
+</body>
+</html>
