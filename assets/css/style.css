@@ -1,0 +1,60 @@
+:root{
+  --bg:#0a0b0f; --card:#11131a; --text:#e6e6f0; --muted:#9aa0aa;
+  --primary:#7c5cff; --glow:0 0 30px rgba(124,92,255,.35);
+  --accent:#18ffe6; --danger:#ff3b3b; --gold:#ffc107;
+}
+
+*{box-sizing:border-box} html,body{margin:0;padding:0}
+body{
+  background:radial-gradient(1200px 800px at 80% -10%,rgba(124,92,255,.07),transparent),
+             radial-gradient(1000px 600px at -10% 90%,rgba(24,255,230,.05),transparent),
+             var(--bg);
+  color:var(--text); font:16px/1.6 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+}
+
+a{color:var(--text); text-decoration:none}
+.container{max-width:1200px; margin:auto; padding:24px}
+.grid{display:grid; gap:24px}
+.grid-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:18px; box-shadow:var(--glow); overflow:hidden
+}
+.card img{display:block; width:100%}
+.card .pad{padding:18px}
+h1,h2{line-height:1.15; margin:0 0 12px}
+h1{font-size:clamp(28px,4vw,42px)}
+h2{font-size:clamp(22px,3vw,30px); color:var(--text)}
+.muted{color:var(--muted)}
+.btn{
+  display:inline-block; padding:12px 18px; border-radius:12px;
+  background:linear-gradient(90deg,var(--primary),var(--accent));
+  color:#0b0c10; font-weight:700; box-shadow:0 0 18px rgba(124,92,255,.35);
+}
+.btn-outline{
+  border:1px solid rgba(255,255,255,.18); padding:10px 16px; border-radius:12px; color:var(--text)
+}
+nav{
+  position:sticky; top:0; z-index:50; backdrop-filter: blur(10px);
+  background:rgba(10,11,15,.6); border-bottom:1px solid rgba(255,255,255,.06)
+}
+.navbar{display:flex; align-items:center; justify-content:space-between; padding:14px 24px}
+.logo{font-weight:900; letter-spacing:.6px}
+.menu a{margin:0 10px; padding:8px 10px; border-radius:8px}
+.menu a.active, .menu a:hover{background:rgba(124,92,255,.12)}
+.hero{
+  padding:60px 0; background:
+  radial-gradient(1000px 400px at 85% 10%, rgba(124,92,255,.12), transparent),
+  radial-gradient(800px 500px at 10% 90%, rgba(24,255,230,.1), transparent);
+}
+.hero .lead{max-width:760px}
+.audio{width:100%}
+select{
+  width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(255,255,255,.12);
+  background:#0f1117; color:var(--text); margin:8px 0 12px
+}
+.badge{display:inline-block; padding:6px 10px; border-radius:999px; background:rgba(124,92,255,.15); color:var(--text); font-size:.85rem}
+table{width:100%; border-collapse:collapse}
+td,th{padding:12px; border-bottom:1px solid rgba(255,255,255,.08); text-align:left}
+.footer{padding:32px 0; border-top:1px solid rgba(255,255,255,.06); color:var(--muted); text-align:center}
