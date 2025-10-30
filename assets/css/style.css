@@ -61,8 +61,8 @@ td,th{padding:12px; border-bottom:1px solid rgba(255,255,255,.08); text-align:le
 
 /* Limite la taille des images dans la galerie */
 .gallery img {
-  width: 100%;
-  height: 220px;            /* ajuste ici la hauteur (ex : 180px, 220px, etc.) */
+  width: 60%;
+  height: 100px;            /* ajuste ici la hauteur (ex : 180px, 220px, etc.) */
   object-fit: cover;        /* garde le cadrage centré sans déformer */
   border-radius: 12px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
