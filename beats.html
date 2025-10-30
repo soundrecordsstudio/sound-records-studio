@@ -42,96 +42,89 @@
     </div>
   </nav>
 
-  <section class="container">
-    <h1>🎧 Packs de Prods — Afro / Trap / Drill</h1>
-    <p class="muted">5 collections originales produites par Nyx-EQ · à écouter ou à placer.</p>
+<section class="container">
+  <h1>🎧 Packs de Prods — Afro / Trap / Drill</h1>
+  <div class="beats-grid">
 
-    <div class="beats-grid">
-      <!-- PACK 1 -->
-      <div class="beat-card">
-        <img src="images/pack1.png" alt="Pack 1">
-        <div class="pad">
-          <h3>Pack #1 – Afro / Trap / Drill</h3>
-          <select id="pack1select" style="width:100%;padding:8px;border-radius:10px;background:#0f1117;color:#fff;border:none;">
-            <option value="audio/pack1_track1.mp3">Afro Bounce</option>
-            <option value="audio/pack1_track2.mp3">Trap Energy</option>
-            <option value="audio/pack1_track3.mp3">Drill Zone</option>
-          </select>
-          <audio id="pack1audio" controls preload="metadata">
-            <source src="audio/pack1_track1.mp3" type="audio/mpeg">
-          </audio>
-          <script>
-            const s1=document.getElementById('pack1select'),a1=document.getElementById('pack1audio');
-            s1.addEventListener('change',()=>{a1.src=s1.value;a1.load();a1.play();});
-          </script>
-          <p><a class="btn" href="contact.html">🔗 Proposer un placement</a></p>
-        </div>
-      </div>
-
-      <!-- PACK 2 -->
-      <div class="beat-card">
-        <img src="images/pack2.png" alt="Pack 2">
-        <div class="pad">
-          <h3>Pack #2 – Afro / Trap / Drill</h3>
-          <select id="pack2select">
-            <option value="audio/pack2_track1.mp3">Violet Mood</option>
-            <option value="audio/pack2_track2.mp3">Night Drive</option>
-            <option value="audio/pack2_track3.mp3">Drill Heat</option>
-          </select>
-          <audio id="pack2audio" controls preload="metadata">
-            <source src="audio/pack2_track1.mp3" type="audio/mpeg">
-          </audio>
-          <script>
-            const s2=document.getElementById('pack2select'),a2=document.getElementById('pack2audio');
-            s2.addEventListener('change',()=>{a2.src=s2.value;a2.load();a2.play();});
-          </script>
-          <p><a class="btn" href="contact.html">🔗 Proposer un placement</a></p>
-        </div>
-      </div>
-
-      <!-- Ajoute ici les packs 3, 4 et 5 de la même façon -->
-    </div>
-  </section>
-
-  <section class="container" style="margin-top:70px;">
-    <h1>🎵 Prods individuelles</h1>
-    <p class="muted">Quelques instrumentales sélectionnées (Afro Fusion · Trap US · Drill FR).</p>
-
-    <div class="beats-grid">
-      <div class="beat-card">
-        <img src="images/pack3.png" alt="Red Zone">
-        <div class="pad">
-          <h3>Red Zone (Trap 144 BPM)</h3>
-          <audio controls preload="metadata">
-            <source src="audio/RedZone.mp3" type="audio/mpeg">
-          </audio>
-          <p><a href="contact.html" class="btn">💬 Collaboration</a></p>
-        </div>
-      </div>
-
-      <div class="beat-card">
-        <img src="images/pack4.png" alt="Fade in Blue">
-        <div class="pad">
-          <h3>Fade In Blue (Afro 95 BPM)</h3>
-          <audio controls preload="metadata">
-            <source src="audio/FadeInBlue.mp3" type="audio/mpeg">
-          </audio>
-          <p><a href="contact.html" class="btn">💬 Collaboration</a></p>
-        </div>
-      </div>
-
-      <div class="beat-card">
-        <img src="images/pack5.png" alt="Street Synthwave">
-        <div class="pad">
-          <h3>Street Synthwave (Drill 138 BPM)</h3>
-          <audio controls preload="metadata">
-            <source src="audio/StreetSynthwave.mp3" type="audio/mpeg">
-          </audio>
-          <p><a href="contact.html" class="btn">💬 Collaboration</a></p>
-        </div>
+    <!-- PACK 1 -->
+    <div class="beat-card">
+      <img src="images/pack1.png" alt="Pack 1">
+      <div class="pad">
+        <h3>Pack #1 – Afro / Trap / Drill</h3>
+        <select id="pack1select">
+          <option value="audio/packs/pack1_track1.mp3">Afro Bounce</option>
+          <option value="audio/packs/pack1_track2.mp3">Trap Energy</option>
+          <option value="audio/packs/pack1_track3.mp3">Drill Zone</option>
+        </select>
+        <audio id="pack1audio" controls preload="metadata">
+          <source src="audio/packs/pack1_track1.mp3" type="audio/mpeg">
+        </audio>
+        <script>
+          const s1=document.getElementById('pack1select'),a1=document.getElementById('pack1audio');
+          s1.addEventListener('change',()=>{a1.src=s1.value;a1.load();a1.play();});
+        </script>
       </div>
     </div>
-  </section>
+
+    <!-- PACK 2 -->
+    <div class="beat-card">
+      <img src="images/pack2.png" alt="Pack 2">
+      <div class="pad">
+        <h3>Pack #2 – Afro / Trap / Drill</h3>
+        <select id="pack2select">
+          <option value="audio/packs/pack2_track1.mp3">Violet Mood</option>
+          <option value="audio/packs/pack2_track2.mp3">Night Drive</option>
+          <option value="audio/packs/pack2_track3.mp3">Drill Heat</option>
+        </select>
+        <audio id="pack2audio" controls preload="metadata">
+          <source src="audio/packs/pack2_track1.mp3" type="audio/mpeg">
+        </audio>
+        <script>
+          const s2=document.getElementById('pack2select'),a2=document.getElementById('pack2audio');
+          s2.addEventListener('change',()=>{a2.src=s2.value;a2.load();a2.play();});
+        </script>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="container" style="margin-top:60px;">
+  <h1>🎵 Prods individuelles</h1>
+  <div class="beats-grid">
+
+    <div class="beat-card">
+      <img src="images/pack3.png" alt="Red Zone">
+      <div class="pad">
+        <h3>Red Zone (Trap 144 BPM)</h3>
+        <audio controls preload="metadata">
+          <source src="audio/solo/RedZone.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+    </div>
+
+    <div class="beat-card">
+      <img src="images/pack4.png" alt="Fade In Blue">
+      <div class="pad">
+        <h3>Fade In Blue (Afro 95 BPM)</h3>
+        <audio controls preload="metadata">
+          <source src="audio/solo/FadeInBlue.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+    </div>
+
+    <div class="beat-card">
+      <img src="images/pack5.png" alt="Street Synthwave">
+      <div class="pad">
+        <h3>Street Synthwave (Drill 138 BPM)</h3>
+        <audio controls preload="metadata">
+          <source src="audio/solo/StreetSynthwave.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+    </div>
+  </div>
+</section>
+
 
   <footer class="footer">
     © Nyx-EQ — Sound Records Studio · <a href="https://instagram.com/">Instagram</a> · <a href="https://beatstars.com/">BeatStars</a>
