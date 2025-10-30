@@ -112,30 +112,43 @@
 
     <!-- PACK 3 -->
     <div class="beat-card">
-      <img src="Images/pack3.png" alt="Pack 3">
+      <img src="images/pack3.png" alt="Pack 3">
       <div class="pad">
         <h3>Pack #3 – Afro / Trap / Drill</h3>
+
+    <!-- MENU DE SÉLECTION -->
         <select id="pack3select">
-          <option value="audio/packs/Monaco(Pack3).mp3">Monaco</option>
-          <option value="audio/packs/Berlin(Pack3).mp3">Berlin</option>
-          <option value="audio/packs/Story(Pack3).mp3">Story</option>
-          <option value="audio/packs/N7(Pack3).mp3">N7</option>
-          <option value="audio/packs/FreaK Master(Pack3).mp3">Freak Master</option>
-          <option value="audio/packs/Killer Arrival(Pack3).mp3">Killer Arrival</option>
-          <option value="audio/packs/Clip(Pack3).mp3">Clip</option>
-          <option value="audio/packs/Spirit Graffiti(Pack3).mp3">Spirit Graffiti</option>
+          <option value="audio/packs/monaco-pack3.mp3">Monaco</option>
+          <option value="audio/packs/berlin-pack3.mp3">Berlin</option>
+          <option value="audio/packs/story-pack3.mp3">Story</option>
+          <option value="audio/packs/n7-pack3.mp3">N7</option>
+          <option value="audio/packs/freak-master-pack3.mp3">Freak Master</option>
+          <option value="audio/packs/killer-arrival-pack3.mp3">Killer Arrival</option>
+          <option value="audio/packs/clip-pack3.mp3">Clip</option>
+          <option value="audio/packs/spirit-graffiti-pack3.mp3">Spirit Graffiti</option>
         </select>
+
+    <!-- LECTEUR AUDIO -->
         <audio id="pack3audio" controls preload="metadata">
-          <source src="audio/packs/Monaco(Pack3).mp3" type="audio/mpeg">
-          <source src="audio/packs/Berlin(Pack3).mp3" type="audio/mpeg">
-          <source src="audio/packs/Story(Pack3).mp3" type="audio/mpeg">
-          <source src="audio/packs/N7(Pack3).mp3" type="audio/mpeg">
-          <source src="audio/packs/FreaK Master(Pack3).mp3" type="audio/mpeg">
-          <source src="audio/packs/Killer Arrival(Pack3).mp3" type="audio/mpeg">
-          <source src="audio/packs/Clip(Pack3).mp3" type="audio/mpeg">
-          <source src="audio/packs/Spirit Graffiti(Pack3).mp33" type="audio/mpeg">
-        </audio>
-        <script>
+        <source src="audio/packs/monaco-pack3.mp3" type="audio/mpeg">
+      </audio>
+
+    <!-- SCRIPT DE CHANGEMENT AUTOMATIQUE -->
+    <script>
+      const s3 = document.getElementById('pack3select'),
+            a3 = document.getElementById('pack3audio');
+      s3.addEventListener('change', () => {
+        a3.src = s3.value;
+        a3.load();
+        a3.play();
+      });
+    </script>
+
+    <p class="muted">8 titres – Trap / Afro / Drill – 2025</p>
+    <a href="contact.html" class="btn">🎧 Collaboration / Licence</a>
+  </div>
+</div>
+
           const s2=document.getElementById('pack2select'),a2=document.getElementById('pack2audio');
           s2.addEventListener('change',()=>{a2.src=s2.value;a2.load();a2.play();});
         </script>
